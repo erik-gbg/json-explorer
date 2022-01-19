@@ -1,6 +1,6 @@
 # JSON Explorer
 
-JSON Explorer låter dig organisera en JSON-fil (vilken som helst) i grupperingar för en bättre överblick. Att användas för analys av innehåll och datakvalitet. Användargränssnittet är byggt med PySimpleGUI. 
+JSON Explorer låter dig organisera en JSON-fil (vilken som helst) i grupperingar, som trädstruktur, för en bättre överblick. Att användas för analys av innehåll och datakvalitet. Användargränssnittet är byggt med PySimpleGUI. 
 
 ## Demo
 
