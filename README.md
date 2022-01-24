@@ -24,7 +24,7 @@ Börja med att köra en demo. Följande trädvyer finns i demon:
 * SUSA-navet: Utbildningar som saknar beskrivning
 * SUSA-navet: Vilka utbildningar finns? (CSN, avgift o.s.v.)
 
-Tre olika JSON-filer:
+Baserat på tre olika JSON-filer:
 * JobSearch är Platsbankens platsannonser (pb.json)
 * Jobtech Links innehåller även andra sajters platsannonser (links.json)
 * SUSA-navet är en nationell databas för utbildningar (susa.json)
@@ -69,12 +69,13 @@ Konfigurationen appliceras på JSON-filen och skapar trädvyn som visas i GUI:et
 
     python json_explorer.py ./resources/pb_geo.cfg ./resources/pb.json
 
-## Alla kommandoradsargument
+## Om alla kommandoradsargument
 
-Det finns två signifikanta underkataloger med datafiler:
+Innan vi går in på själva kommandoradsargument, så ska man ha koll på att det finns två signifikanta underkataloger för datafiler:
 * `./resources` innehåller .cfg och .json-filer
 * `./jtrees` innehåller .jtree-filer
 
+### Kommando-synopsis:
 
     usage: python json_explorer.py [[-build | -saveall | file.jtree | [-save] [file.cfg] [file.json]]
 
@@ -95,15 +96,14 @@ Med filargument:
 
 ## Flödesschema
 
-![apa hej](docs/flowcharts.svg)
+![](docs/flowcharts.svg)
 
 ## Todo
 
 Det är inget stort steg att översätta jtree till html. 
-På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer tillgängliga för allmänheten stand-alone.
+På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer tillgängliga för allmänheten, stand-alone.
 
-Konfigurationssyntaxen kan göras enklare (människovänlig).
-
+Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt.
 
 
 
