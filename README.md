@@ -25,9 +25,9 @@ Börja med att köra en demo. Följande trädvyer finns i demon:
 * SUSA-navet: Vilka utbildningar finns? (CSN, avgift o.s.v.)
 
 Baserat på tre olika JSON-filer:
-* JobSearch är Platsbankens platsannonser (pb.json)
-* Jobtech Links innehåller även andra sajters platsannonser (links.json)
-* SUSA-navet är en nationell databas för utbildningar (susa.json)
+* [JobSearch](https://jobsearch.api.jobtechdev.se/) är Platsbankens platsannonser ([pb.json](https://jobstream.api.jobtechdev.se/))
+* [Jobtech Links](https://links.api.jobtechdev.se/) innehåller även andra sajters platsannonser ([links.json](https://data.jobtechdev.se/annonser/jobtechlinks/index.html))
+* [SUSA-navet](https://susanavet2.skolverket.se/swagger-ui/) är en nationell databas för utbildningar ([susa.json](https://gitlab.com/arbetsformedlingen/education/education-scraping))
 
 Alla JSON-filer har skapats med data aktuella i januari 2022.
 
