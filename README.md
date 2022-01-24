@@ -45,8 +45,7 @@ Starta JSON Explorer utan argument: `python json_explorer.py`
 
 Välj ett scenario från menyn, vänta på att JSON-filen laddats, sedan kan du bläddra runt och undersöka datat.
 
-Det skapas ett menyval för varje .jtree-fil i underkatalogen `./jtrees` (kan skapas genom att köra med flaggan -saveall).  
-Om denna katalog saknas, så skapas istället menyval för varje konfigurationsfil (.cfg) i katalogen `./resources`. 
+Det skapas ett menyval för varje .jtree-fil i underkatalogen `./jtrees` (kan skapas genom att köra med flaggan -saveall). Om denna katalog saknas, så skapas istället menyval för varje konfigurationsfil (.cfg) i katalogen `./resources`. 
 
 ## Konfiguration
 
@@ -73,7 +72,7 @@ Konfigurationen appliceras på JSON-filen och skapar trädvyn som visas i GUI:et
 
 Innan vi går in på själva kommandoradsargument, så ska man ha koll på att det finns två signifikanta underkataloger för datafiler:
 * `./resources` innehåller .cfg och .json-filer
-* `./jtrees` innehåller .jtree-filer
+* `./jtrees` innehåller .jtree-filer (ingår inte i repot, måste skapas)
 
 ### Kommando-synopsis:
 
@@ -103,7 +102,7 @@ Med filargument:
 Det är inget stort steg att översätta jtree till html. 
 På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer tillgängliga för allmänheten, stand-alone.
 
-Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt.
+Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt (även om det torde vara självförklarande).
 
 
 
