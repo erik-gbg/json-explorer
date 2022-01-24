@@ -4,7 +4,7 @@ import cProfile, pstats, io, os
 from pstats import SortKey
 
 if __name__ == "__main__":
-    # os.chdir('..')
+    os.chdir('..')  # use or not, depending on what you set your workdir to
     pr = cProfile.Profile()
     pr.enable()
     t0 = time()
