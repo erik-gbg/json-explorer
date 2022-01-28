@@ -1,5 +1,4 @@
-import json, os, re
-from sys import argv
+import json, sys, os, re
 from os.path import isfile, isdir, join, splitext, dirname, basename
 from src.configuration import config, process_config, get_mini_config
 from src.globals import config_ext, json_ext, jtree_ext
@@ -91,7 +90,7 @@ def get_choices_tuples(path, only_cfg=False):
             with open(join(path, cfile), 'r', encoding='unicode_escape', errors='strict') as file:
                 header_key = '"header": '
                 header = None
-                for _ in range(20):
+                for _ in range(20):  # The header should be among the first few lines
                     line = file.readline()
                     if line.find(header_key) != -1:
                         header = line.replace(header_key, '').split('"')[1]
@@ -112,7 +111,7 @@ def demo(path):
     run_explorer_build(config_filename=config_filename, json_filename=join(path, choices[ix][2]))
 
 
-def main():
+def main(argv):
     argc = len(argv)
     if argc == 1:
         if isdir(jtree_path):
@@ -146,4 +145,4 @@ def main():
 if __name__ == "__main__":
     # for item in get_choices_tuples(resource_path):
     #     print(item[0])
-    main()
+    main(sys.argv)

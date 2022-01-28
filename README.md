@@ -1,5 +1,7 @@
 # JSON Explorer
 
+![](docs/logo.jpg)
+
 ## One tool to tool them all
 
 JSON Explorer låter dig skriva en konfiguration, som organiserar en JSON-fil (vilken som helst) i nästlade grupperingar, och visar det som en trädvy. 
