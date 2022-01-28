@@ -103,11 +103,12 @@ def radio_window(choice_headers):
     layout = [[sg.Column([[sg.Image(filename='docs/logo.png')]], justification='center')],
               [sg.Text('')],
               [sg.Text('Välj en trädvy:', expand_x=True, justification='center', font='Any 12')],
-              [sg.Text('')]] \
-             + radio + [[sg.Text('')], [sg.OK(), sg.Cancel()]]
+              [sg.Text('')]]\
+              + radio +\
+              [[sg.Text('')], [sg.OK(), sg.Cancel()]]
     event, values = sg.Window('JSON Explorer demo', layout, icon=logo_icon, font='Any 10').read(close=True)
     if event in (sg.WIN_CLOSED, 'Cancel'):
         ix = -1
     else:
-        ix = next(i for i in values if values[i])
+        ix = next(i for i in values if values[i]) - 1
     return ix
