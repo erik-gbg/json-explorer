@@ -1,6 +1,6 @@
 # JSON Explorer
 
-![](docs/logo.jpg)
+![](docs/logo.png)
 
 ## One tool to tool them all
 
