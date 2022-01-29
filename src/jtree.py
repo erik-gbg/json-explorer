@@ -53,7 +53,7 @@ def sort_data_tree(data_tree):
     def sort_tree(d, level):
         data = d['content']
         if isinstance(data, list):
-            new_data = sorted(data, key=lambda v: v['id'])
+            new_data = sorted(data, key=lambda v: v['oneliner'].strip().lower())
         else:  # dict
             d_sorted_range = None
             if level <= config['max_group']:

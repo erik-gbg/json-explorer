@@ -5,8 +5,8 @@ from src.globals import config_ext, json_ext, jtree_ext
 from src import gui
 from src.jtree import build_jtree
 
-resource_path = 'resources'
-jtree_path = 'jtrees'
+resource_path = './resources'
+jtree_path = './jtrees'
 
 
 def load_json(filename):
@@ -53,7 +53,7 @@ def run_explorer_save_tree(config_filename, json_filename):
         json.dump(jtree, file, indent=2)
 
 
-def run_explorer_build(config_filename=None, json_filename=None):
+def run_explorer_gui(config_filename=None, json_filename=None, header=None):
     """
     1. Load json
     2. Build jtree
@@ -61,7 +61,7 @@ def run_explorer_build(config_filename=None, json_filename=None):
     """
     json_filename = _process_run_args(config_filename, json_filename)
     is_jtree = splitext(json_filename)[1] == jtree_ext
-    gui.open_waiting_window(config['header'], f"LOADING {'JTREE' if is_jtree else 'JSON'}...")
+    gui.open_waiting_window(header if header else config['header'], f"LOADING {'JTREE' if is_jtree else 'JSON'}...")
     json_list = load_json(json_filename)
     if is_jtree:
         data_tree = json_list['data_tree']
@@ -75,12 +75,12 @@ def run_explorer_build(config_filename=None, json_filename=None):
     gui.tree_view(gui_treedata, gui_texts)
 
 
-def get_choices_tuples(path, only_cfg=False):
+def _get_choices_tuples(path, only_cfg=False):
     """
     Finds cfg and/or jtree files in resources or jtrees dir
     Then extracts their header and json filename
     """
-    valid_exts = (config_ext, jtree_ext) if not only_cfg else (config_ext)
+    valid_exts = (config_ext, jtree_ext) if not only_cfg else config_ext
     choices = [f for f in os.listdir(path) if isfile(join(path, f)) and splitext(f)[1] in valid_exts]
     for i, cfile in enumerate(choices):
         if splitext(cfile)[1] == config_ext:
@@ -103,12 +103,12 @@ def demo(path):
     """
     Menu for demo
     """
-    choices = get_choices_tuples(path)
-    ix = gui.radio_window([c[0] for c in choices])
+    choices = _get_choices_tuples(path)
+    ix = gui.radio_window([c[0] for c in choices], path)
     if ix == -1:
         return
     config_filename = join(path, choices[ix][1]) if choices[ix][1] else None
-    run_explorer_build(config_filename=config_filename, json_filename=join(path, choices[ix][2]))
+    run_explorer_gui(config_filename=config_filename, json_filename=join(path, choices[ix][2]), header=choices[ix][0])
 
 
 def main(argv):
@@ -121,10 +121,11 @@ def main(argv):
     elif argc == 2 and argv[1] == '-build':
         demo(resource_path)
     elif argc == 2 and splitext(argv[1])[1] == jtree_ext:
-        run_explorer_build(config_filename=None, json_filename=argv[1])
+        run_explorer_gui(config_filename=None, json_filename=argv[1])
     elif argc == 2 and argv[1] == '-saveall':
-        choices = get_choices_tuples(resource_path, only_cfg=True)
+        choices = _get_choices_tuples(resource_path, only_cfg=True)
         for c in choices:
+            print(c[0])
             run_explorer_save_tree(join(resource_path, c[1]), join(resource_path, c[2]))
     else:
         config_filename, json_filename = None, None
@@ -139,10 +140,9 @@ def main(argv):
         if save_jtree:
             run_explorer_save_tree(config_filename=config_filename, json_filename=json_filename)
         else:
-            run_explorer_build(config_filename=config_filename, json_filename=json_filename)
+            run_explorer_gui(config_filename=config_filename, json_filename=json_filename)
 
 
 if __name__ == "__main__":
-    # for item in get_choices_tuples(resource_path):
-    #     print(item[0])
+    # for item in get_choices_tuples(resource_path): print(item[0])
     main(sys.argv)

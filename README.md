@@ -1,6 +1,6 @@
 # JSON Explorer
 
-![](docs/logo.png)
+![](images/logo.png)
 
 ## One tool to tool them all
 
@@ -13,14 +13,15 @@ Det grafiska gränssnittet är byggt med [PySimpleGUI](https://pysimplegui.readt
 
 Börja med att köra en demo. Följande trädvyer finns i demon:
 * JobSearch - Anställningstyp > Lönetyp
-* JobSearch - Flera platser i samma annons
+* JobSearch - Antal jobbpositioner
 * JobSearch - Geografi
 * JobSearch - Kompetenskrav
 * JobSearch - Krav på arbetslivserfarenhet
 * JobSearch - Språkkrav
 * JobSearch - Yrkestaxonomi
-* Jobtech Links: Externa annonssajter - enkel vy (något missvisande)
-* Jobtech Links: Externa annonssajter - komplett vy
+* Jobtech Links: Externa annonssajter
+* SUSA-navet: Gymnasieutbildningar
+* SUSA-navet: Högskola > Ämnen > Utbildning
 * SUSA-navet: Myndighet > Skoltyp > Lärosäte
 * SUSA-navet: Utbildningar med flera lärosäten
 * SUSA-navet: Utbildningar som saknar beskrivning
@@ -72,7 +73,7 @@ Konfigurationen appliceras på JSON-filen och skapar trädvyn som visas i GUI:et
 
 ## Om alla kommandoradsargument
 
-Innan vi går in på själva kommandoradsargument, så ska man ha koll på att det finns två signifikanta underkataloger för datafiler:
+Innan vi går in på själva kommandoradsargumenten, så ska man ha koll på att det finns två signifikanta underkataloger för datafiler:
 * `./resources` innehåller .cfg och .json-filer
 * `./jtrees` innehåller .jtree-filer (ingår inte i repot, måste skapas)
 
@@ -97,14 +98,14 @@ Med filargument:
 
 ## Flödesschema
 
-![](docs/flowcharts.svg)
+![](images/flowcharts.svg)
 
 ## Todo
 
 Det är inget stort steg att översätta jtree till html. 
 På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer tillgängliga för allmänheten, stand-alone.
 
-Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt (även om det torde vara självförklarande).
+Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt (även om det redan torde vara hyfsat självförklarande).
 
 
 

@@ -1,14 +1,15 @@
-from json_explorer import main
-from time import time
-import cProfile, pstats, io, os
+import cProfile, pstats, io, os, sys
 from pstats import SortKey
+from time import time
+from json_explorer import main
 
 if __name__ == "__main__":
-    os.chdir('..')  # use or not, depending on what you set your workdir to
+    print(os.getcwd())
+    #os.chdir('..')  # use or not, depending on what you set your workdir to
     pr = cProfile.Profile()
     pr.enable()
     t0 = time()
-    main()
+    main(sys.argv)
     pr.disable()
     print(time() - t0)
     s = io.StringIO()

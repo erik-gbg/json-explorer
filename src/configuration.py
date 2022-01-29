@@ -19,7 +19,7 @@ def _setup_config(cfgp):
         config['filter_desc'] = 'Inget filter använt'
         config['filter_show_count'] = False
     config['item_id_func'] = eval(cfgp.get('general', 'item_id_func', fallback="lambda x: x.get('id')"))
-    config['item_oneliner_func'] = eval(cfgp.get('general', 'item_oneliner_func', fallback="lambda x: str(x)[:120]"))
+    config['item_oneliner_func'] = eval(cfgp.get('general', 'item_oneliner_func', fallback="lambda x: str(x)[:130]"))
     config['item_links_list_func'] = eval(cfgp.get('general', 'item_links_list_func', fallback="lambda x: None"))
 
     group_level = 0
