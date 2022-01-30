@@ -101,10 +101,6 @@ def update_waiting_window(text):
     waiting_window.refresh()
 
 
-def _round_up(t, n):
-    return -(-t//n)
-
-
 def radio_window(choice_headers, path):
     num = len(choice_headers)
     if num < 8:
