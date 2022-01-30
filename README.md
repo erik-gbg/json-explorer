@@ -19,6 +19,7 @@ Börja med att köra en demo. Följande trädvyer finns i demon:
 * JobSearch - Krav på arbetslivserfarenhet
 * JobSearch - Språkkrav
 * JobSearch - Yrkestaxonomi
+* Jobtech Links: Annonser som saknas på AF
 * Jobtech Links: Externa annonssajter
 * SUSA-navet: Gymnasieutbildningar
 * SUSA-navet: Högskola > Ämnen > Utbildning
