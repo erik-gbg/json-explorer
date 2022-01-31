@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 import webbrowser
-import json
+import json, sys, os
 
 json_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQ4y52TzStEURiHn/ecc6XG54JSdlMkNhYWsiILS0lsJaUsLW2Mv8CfIDtr2VtbY4GUEvmIZnKbZsY977Uwt2HcyW1+dTZvt6fn9557BGB+aaNQKBR2ifkbgWR+cX13ubO1svz++niVTA1ArDHDg91UahHFsMxbKWycYsjze4muTsP64vT43v7hSf/A0FgdjQPQWAmco68nB+T+SFSqNUQgcIbN1bn8Z3RwvL22MAvcu8TACFgrpMVZ4aUYcn77BMDkxGgemAGOHIBXxRjBWZMKoCPA2h6qEUSRR2MF6GxUUMUaIUgBCNTnAcm3H2G5YQfgvccYIXAtDH7FoKq/AaqKlbrBj2trFVXfBPAea4SOIIsBeN9kkCwxsNkAqRWy7+B7Z00G3xVc2wZeMSI4S7sVYkSk5Z/4PyBWROqvox3A28PN2cjUwinQC9QyckKALxj4kv2auK0xAAAAAElFTkSuQmCC'
 url_icon = b'iVBORw0KGgoAAAANSUhEUgAAABUAAAAHCAIAAABoa5FRAAAACXBIWXMAAAewAAAHsAHUgoNiAAABlElEQVQYlaXLSS8DYRgA4NenIqlKMGKrLZYYQ1ttVSwHsVzFvX9C3ESJi+AgEQl/QDioWA5CItZIqrEzHbrQUq1Kq9WhxehMXxf/wHN/UhAR/oFAzNs3OJkEWJzsn1qyAiRGTcMLsyNbXETiPT09xvAP+E9Wp+dW+gYmkgBrMwPj8wcA4phpKCoCAUVxZtwTin9zr1HvuUXkn/n0gu4W7cGh1ediBSHi9EWPj1h9e1e28PT8IXDBiO/CIsaCb2m5WTIgAERVmcfeOAmllYsB5+11Ra2aYlo/Xcfs7YPR2Ht2cmUPieqiTB1ddMW5EnI6N/XVaedKKhkAIACgb2T215cpZX1Vjsy8dabW1srSczIIf+kOdXZ0uS9346lyRRppMGism2ZFHk0XKswbh3Va1d8vZ5qsO5u0RtVsqNmxPDClFKTI9GXUaRiUxSXSoyWfbiMAymrdxd5GjU5nMDDb+w5NdQEAACIiii4b+5lA6fvd5nAnERExFn658wYQ0e9xBPkvRESU7rjr+A9KQsxmv5cQEfEXY8DOiUBzuE8AAAAASUVORK5CYII='
@@ -85,13 +85,23 @@ def tree_view(gui_treedata, gui_texts):
     window.hide()  # fixa detta bättre
 
 
+def image_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
 def open_waiting_window(jtree_header, text):
     layout = [[sg.Text(jtree_header, expand_x=True, justification='center', background_color='white',
                        text_color='black', font='Any 12')],
               [sg.Text('')],
               [sg.Text('')],
               [sg.Text('  '),
-               sg.Image(filename='images/logo.png'),
+               sg.Image(filename=image_path('images/logo.png')),
                sg.Text(text, font='Any 12 bold', key='wait_text', expand_x=True, justification='center'),
                sg.Text(' ')]
               ]
@@ -116,7 +126,7 @@ def radio_window(choice_headers, path):
         if modd:
             radio2.append([sg.Text('')])
         radio = [[sg.Column(radio1), sg.Column(radio2)]]
-    layout = [[sg.Column([[sg.Image(filename='images/logo.png')]], justification='center')],
+    layout = [[sg.Column([[sg.Image(filename=image_path('images/logo.png'))]], justification='center')],
               [sg.Text('')],
               [sg.Text('Välj en trädvy', expand_x=True, justification='center', font='Any 14')],
               [sg.Text('')]] \
