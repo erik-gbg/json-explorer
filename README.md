@@ -108,5 +108,8 @@ På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer 
 
 Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt (även om det redan torde vara hyfsat självförklarande).
 
+### Credits
 
+Tree logo by Leo Reynolds  
+https://www.flickr.com/photos/lwr/49983862402
 
