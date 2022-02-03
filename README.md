@@ -9,9 +9,17 @@ Det gör att man kan få god överblick över sin data, ur flera olika aspekter.
 Att användas för analys av innehåll och datakvalitet. 
 Det grafiska gränssnittet är byggt med [PySimpleGUI](https://pysimplegui.readthedocs.io/).
 
+## Instruktionsfilm
+
+Börja med att titta på en liten film:
+
+[En introduktion](https://ia801403.us.archive.org/27/items/json-explorer-en-introduktion/JSON%20Explorer%20-%20En%20introduktion.webm)
+
+[![](images/thumb.png)](https://ia801403.us.archive.org/27/items/json-explorer-en-introduktion/JSON%20Explorer%20-%20En%20introduktion.webm)
+
 ## Demo
 
-Börja med att köra en demo. Följande trädvyer finns i demon:
+Följande trädvyer finns i demon:
 * JobSearch - Anställningstyp > Lönetyp
 * JobSearch - Antal jobbpositioner
 * JobSearch - Geografi
@@ -107,9 +115,7 @@ Det är inget stort steg att översätta jtree till html.
 På så sätt skulle man på ett lättviktigt sätt kunna göra dessa trädvyer tillgängliga för allmänheten, stand-alone.
 
 Konfigurationssyntaxen kan göras enklare (människovänlig). Och ja, behöver dokumenteras ordentligt (även om det redan torde vara hyfsat självförklarande).
-
-### Credits
-
-Tree logo by Leo Reynolds  
-https://www.flickr.com/photos/lwr/49983862402
+<br />
+<br />
+###### Credits: Tree logo by [Leo Reynolds](https://www.flickr.com/photos/lwr/49983862402)
 
