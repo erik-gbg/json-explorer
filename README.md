@@ -9,7 +9,7 @@ Det gör att man kan få god överblick över sin data, ur flera olika aspekter.
 Att användas för analys av innehåll och datakvalitet. 
 Det grafiska gränssnittet är byggt med [PySimpleGUI](https://pysimplegui.readthedocs.io/).
 
-## Instruktionsfilm
+## Instruktionsfilmer
 
 Börja med att titta på en liten film:
 
